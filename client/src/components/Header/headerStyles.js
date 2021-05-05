@@ -26,6 +26,7 @@ export default makeStyles(theme => ({
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
+        zIndex: 1
     },
     navtext: {
         fontFamily: "'Oswald', monospace",
@@ -56,11 +57,11 @@ export default makeStyles(theme => ({
         alignItems: "center",
         height: "100px",
         width: "500px",
-        zIndex: -999,
+        zIndex: 2,
         [theme.breakpoints.down("sm")] : {
             position: "absolute",
-            top: props => props.top ,
-            right: "0",
+            right: props => props.right ,
+            top: "16vh",
             height: "56vh",
             width: "100%",
             flexDirection: "column",

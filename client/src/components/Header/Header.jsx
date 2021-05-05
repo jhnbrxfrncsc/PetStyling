@@ -3,16 +3,17 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import {
     AppBar,
     Box,
+    // Fade,
     IconButton,
     Toolbar,
-    Typography
+    Typography,
 } from '@material-ui/core';
 import useStyles from './headerStyles';
 
 const Header = () => {
     const [openNav, setOpenNav] = useState(false);
     const classes = useStyles({
-        top: openNav ? "16vh" : "-100vh"
+        right: openNav ? "0%" : "-100%"
     });
 
     const handleNav = () => {
@@ -20,12 +21,13 @@ const Header = () => {
     }
     return (
         <AppBar 
-            position="static"
+            position="fixed"
         >
             <Toolbar
                 className={classes.navbar}
             >
                 <Box className={classes.navicon} />
+                {/* <Fade in={openNav} timeout={2000}> */}
                 <Box className={classes.navlinks}>
                     <Typography 
                         variant="h5" 
@@ -56,6 +58,7 @@ const Header = () => {
                         CONTACT US
                     </Typography>
                 </Box>
+                {/* </Fade> */}
                 <Box className={classes.navbtn} />
                 <IconButton 
                     color="inherit"
