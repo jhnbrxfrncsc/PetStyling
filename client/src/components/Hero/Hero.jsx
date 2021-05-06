@@ -7,6 +7,7 @@ const Hero = () => {
     return (
         <>
             <Box className={classes.heroBG}>
+                <Box className={classes.model} />
                 <Box 
                     className={classes.heroText}  
                 >

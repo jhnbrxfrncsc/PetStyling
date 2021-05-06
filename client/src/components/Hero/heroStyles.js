@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
-// import bgHero from '../../assets/img/newBGHERO.png';
+import modelImg from '../../assets/img/model.png';
 
 
 export default makeStyles(theme => ({
@@ -9,13 +9,14 @@ export default makeStyles(theme => ({
             fontSize: "3.6em",
             fontWeight: "bold"
         },
-        [theme.breakpoints.down("sm")] : {
-            fontSize: "2.5em",
+        [theme.breakpoints.down("md")] : {
+            fontSize: "2.7em",
             fontWeight: "bold"
         },
-        [theme.breakpoints.down("xs")] : {
-            fontSize: "1.5em",
-            fontWeight: "bold"
+        [theme.breakpoints.down("sm")] : {
+            fontSize: "2.5em",
+            fontWeight: "bold",
+            textAlign: "center"
         },
     }, 
     font2: {
@@ -24,68 +25,77 @@ export default makeStyles(theme => ({
             fontSize: "6em",
             fontWeight: "bold"
         },
-        [theme.breakpoints.down("sm")] : {
-            fontSize: "3em"
+        [theme.breakpoints.down("md")] : {
+            fontSize: "4em",
         },
-        [theme.breakpoints.down("xs")] : {
-            fontSize: "2em"
-        }
+        [theme.breakpoints.down("sm")] : {
+            fontSize: "3em",
+            textAlign: "center"
+        },
     }, 
     font3: {
         fontFamily: "Oswald",
         [theme.breakpoints.down("lg")] : {
             fontSize: "1.5em",
         },
+        [theme.breakpoints.down("lg")] : {
+            fontSize: "1.2em",
+        },
         [theme.breakpoints.down("sm")] : {
             fontSize: ".9em",
-        },
-        [theme.breakpoints.down("xs")] : {
-            fontSize: "0.8em",
+            textAlign: "center"
         },
     }, 
     heroBG: {
         backgroundImage: `radial-gradient(#FFFFFF  ,#9DB4FA )`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "50% 50%" ,
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
-        height: "100vh",
+        // height: "100vh",
         width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-around",
+        flexWrap: "wrap",
         [theme.breakpoints.down('lg')]: {
             height: "100vh",
-            backgroundSize: "100vw 90vh",
-            backgroundPosition: "50% 100%" ,
         },
         [theme.breakpoints.down('sm')]: {
-            height: "70vh",
-            backgroundSize: "120vw 55vh",
-            backgroundPosition: "50% 35%" ,
+            height: "65vh",
+            justifyContent: "center",
+            paddingTop: 50
         },
         [theme.breakpoints.down('xs')]: {
+            flexDirection: "column",
             height: "65vh",
-            width: "100%",
-            backgroundPosition: "50% 28%" ,
-            backgroundSize: "120% 45%",
         },
-        // zIndex: -10
+    },
+    model :{
+        height: 400,
+        width: 500,
+        background: `url(${modelImg})`,
+        backgroundSize: "cover",
+        [theme.breakpoints.down('sm')] : {
+            height: 200,
+            width: 250
+        },
     },
     heroText: {
-        height: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
         justifyContent: "center",
-        marginRight: 12,
         [theme.breakpoints.down('xs')]: {
-            alignItems: "flex-end",
+            alignItems: "center",
             justifyContent: "center",
-            paddingTop: "200px"
+            textAlign: "center"
         },
-        [theme.breakpoints.down('sm')]: {
-            alignItems: "flex-end",
-            justifyContent: "flex-start",
-            paddingTop: "200px"
-        }
+        [theme.breakpoints.down('xs')]: {
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center"
+        },
     },
     btn: {
         backgroundColor: "#000",
@@ -104,10 +114,5 @@ export default makeStyles(theme => ({
             width: 130,
             fontSize: 11
         },
-        [theme.breakpoints.down('xs')]: {
-            height: 25,
-            width: 120,
-            fontSize: 10
-        }
     }
 }))
